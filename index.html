@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Via Metrofer: Jornalismo Sobre Trilhos</title>
+<meta name="description" content="Notícias e curiosidades do transporte sobre trilhos na Região Metropolitana de São Paulo e no mundo. Vídeos toda terça e quinta.">
+<meta property="og:title" content="Via Metrofer: Jornalismo Sobre Trilhos">
+<meta property="og:description" content="Informação na palma da sua mão.">
+<meta property="og:image" content="assets/banner.jpg">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#071b4d;--surf:#0d2a6b;--line:#1d3f93;--ink:#f4f7ff;--mute:#b6c4ea;--gold:#ffb612;--onGold:#071b4d;color-scheme:dark}
+:root[data-theme=light]{--bg:#f3f6fc;--surf:#fff;--line:#c9d6f2;--ink:#0a1f4f;--mute:#475a8a;--gold:#f5a800;--onGold:#071b4d;color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 Barlow,system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+h1,h2,h3{font-style:italic;font-weight:900;line-height:1.05;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(2rem,5vw,3rem);margin-bottom:1rem}
+
+/* topo */
+.top{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:1rem;padding:.55rem clamp(1rem,4vw,2.5rem);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-style:italic;font-weight:900;font-size:1.25rem}
+.brand img{width:38px;height:38px}
+.brand b{color:var(--gold)}
+.top nav{margin-left:auto;display:flex;gap:1.25rem;font-weight:600}
+.top nav a{text-decoration:none;color:var(--mute)}
+.top nav a:hover{color:var(--gold)}
+.tema{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:99px;padding:.35rem .8rem;font:600 .9rem Barlow,sans-serif;cursor:pointer}
+@media(max-width:640px){.top nav{display:none}.tema{margin-left:auto}}
+
+/* abertura */
+.hero{position:relative;background:#050f33}
+.hero>img{display:block;width:100%;height:clamp(210px,46vw,64vh);object-fit:cover;object-position:center}
+.hero::after{content:"";position:absolute;left:0;right:0;top:0;height:clamp(210px,46vw,64vh);background:linear-gradient(transparent 55%,var(--bg))}
+.hero .txt{position:relative;z-index:1;margin-top:-4.5rem;padding:0 clamp(1rem,4vw,2.5rem) 2.5rem;max-width:1100px;margin-inline:auto}
+.hero h1{font-size:clamp(2.4rem,7.5vw,4.8rem);max-width:14ch}
+.hero p{color:var(--mute);max-width:46ch;margin:.9rem 0 1.4rem}
+.btns{display:flex;flex-wrap:wrap;gap:.7rem}
+.btn{display:inline-block;padding:.7rem 1.25rem;border-radius:10px;font-weight:600;text-decoration:none;border:2px solid var(--gold);color:var(--ink);transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-2px);background:color-mix(in srgb,var(--gold) 18%,transparent)}
+.btn.main{background:var(--gold);color:var(--onGold);font-weight:800}
+.btn.main:hover{background:var(--gold);filter:brightness(1.08)}
+
+/* faixa */
+.faixa{background:var(--gold);color:var(--onGold);transform:skewY(-1.2deg);margin:1rem 0 2rem}
+.faixa div{transform:skewY(1.2deg);display:flex;flex-wrap:wrap;justify-content:space-around;gap:.6rem 2rem;padding:1.1rem clamp(1rem,4vw,2.5rem);max-width:1100px;margin:auto}
+.faixa b{font-size:1.5rem;font-style:italic;font-weight:900;line-height:1}
+.faixa span{display:block;font-weight:500;font-size:.95rem}
+
+/* linha de metrô */
+.rail{position:relative;max-width:1100px;margin:auto;padding:0 clamp(1rem,4vw,2.5rem) 2rem 3.6rem}
+.rail::before{content:"";position:absolute;left:1.1rem;top:0;bottom:2rem;width:6px;border-radius:3px;background:var(--gold)}
+.sec{padding:2.2rem 0 2.8rem}
+.sec h2{position:relative}
+.sec h2::before{content:"";position:absolute;left:-3rem;top:50%;transform:translateY(-50%);width:22px;height:22px;border-radius:50%;background:var(--bg);border:5px solid var(--gold)}
+
+/* quem somos */
+.sobre{display:grid;grid-template-columns:minmax(220px,300px) 1fr;gap:2rem;align-items:center}
+.vito{position:relative;text-align:center}
+.vito img{width:100%;max-width:280px;filter:drop-shadow(0 14px 22px #0006)}
+.vito.fala img{animation:bate .5s ease-in-out infinite alternate}
+@keyframes bate{to{transform:translateY(-8px) rotate(-1.5deg)}}
+.play{display:inline-flex;align-items:center;gap:.6rem;margin-top:.8rem;border:0;border-radius:99px;padding:.55rem 1.1rem .55rem .6rem;background:var(--gold);color:var(--onGold);font:800 1rem Barlow,sans-serif;cursor:pointer}
+.play i{width:30px;height:30px;border-radius:50%;background:var(--onGold);display:grid;place-items:center}
+.play svg{width:14px;height:14px;fill:var(--gold)}
+.sobre p{max-width:62ch;margin:0 0 1rem}
+.selos{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.2rem 0 1.4rem;padding:0;list-style:none}
+.selos li{border:2px solid var(--line);border-radius:8px;padding:.35rem .8rem;font-weight:600;background:var(--surf)}
+.dias{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;max-width:560px}
+.dias div{background:var(--surf);border-left:5px solid var(--gold);padding:.8rem 1rem;border-radius:0 10px 10px 0}
+.dias b{display:block;font-style:italic;font-weight:900;font-size:1.25rem}
+.dias span{color:var(--mute);font-size:.96rem;line-height:1.4;display:block}
+.vito small{display:block;margin-top:.7rem;color:var(--mute);font-size:.95rem;line-height:1.4}
+@media(max-width:760px){.sobre{grid-template-columns:1fr}.dias{grid-template-columns:1fr}}
+
+/* vídeos */
+.vids{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.4rem .2rem 1rem;margin-right:calc(-1 * clamp(1rem,4vw,2.5rem))}
+.vid{flex:0 0 min(230px,62vw);scroll-snap-align:start}
+.vid .tela{position:relative;aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:#050f33;border:2px solid var(--line)}
+.vid .tela>button{all:unset;cursor:pointer;position:absolute;inset:0}
+.vid img,.vid iframe{width:100%;height:100%;border:0;object-fit:cover;display:block}
+.vid .tela>button::after{content:"";position:absolute;left:50%;top:50%;width:56px;height:56px;margin:-28px;border-radius:50%;background:var(--gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23071b4d' d='M9 6l10 6-10 6z'/%3E%3C/svg%3E") center/60% no-repeat;box-shadow:0 4px 18px #0008}
+.vid h3{font-size:1.1rem;margin-top:.7rem;font-style:normal;font-weight:600;line-height:1.3}
+.dica{color:var(--mute);font-size:.95rem;margin:0}
+
+/* redes e contato */
+.redes{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.9rem}
+.rede{display:block;text-decoration:none;padding:1.1rem 1.2rem;background:var(--surf);border:2px solid var(--line);border-radius:14px;transition:border-color .15s,transform .15s}
+.rede:hover{border-color:var(--gold);transform:translateY(-3px)}
+.rede b{display:block;font-style:italic;font-weight:900;font-size:1.5rem}
+.rede span{color:var(--mute)}
+.mails{display:grid;gap:.9rem;max-width:640px}
+.mail{display:block;text-decoration:none;padding:1rem 1.2rem;border-left:6px solid var(--gold);background:var(--surf);border-radius:0 12px 12px 0}
+.mail b{display:block;font-size:1.15rem}
+.mail span{color:var(--mute)}
+.mail:hover b{color:var(--gold)}
+footer{text-align:center;padding:2rem 1rem 3rem;color:var(--mute);border-top:1px solid var(--line)}
+footer img{width:90px;margin-bottom:.4rem}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="#inicio"><img src="assets/logo.png" alt="">Via Metro<b>fer</b></a>
+  <nav aria-label="Seções">
+    <a href="#quem-somos">Quem somos</a><a href="#videos">Vídeos</a><a href="#redes">Redes</a><a href="#contato">Contato</a>
+  </nav>
+  <button class="tema" id="tema" type="button">Modo claro</button>
+</header>
+
+<section class="hero" id="inicio">
+  <img src="assets/banner.jpg" alt="Via Metrofer, Jornalismo Sobre Trilhos: trem na plataforma e a ponte estaiada de São Paulo">
+  <div class="txt">
+    <h1>Informação na palma da sua mão</h1>
+    <p>Notícias e curiosidades do transporte sobre trilhos na Região Metropolitana de São Paulo e no mundo.</p>
+    <div class="btns" id="btns-hero"></div>
+  </div>
+</section>
+
+<div class="faixa"><div>
+  <p style="margin:0"><b id="seguidores"></b><span>seguidores nas redes</span></p>
+  <p style="margin:0"><b>Terça e quinta</b><span>vídeos curtos toda semana</span></p>
+  <p style="margin:0"><b>Credenciados</b><span>Agência Brasil 61 e iNFRA</span></p>
+</div></div>
+
+<main class="rail">
+
+  <section class="sec" id="quem-somos">
+    <h2>Quem somos</h2>
+    <div class="sobre">
+      <div class="vito" id="vito">
+        <img src="assets/vito.webp" alt="Vito, o mascote da Via Metrofer: um trem de terno azul segurando um microfone" width="280">
+        <button class="play" id="play" type="button" aria-label="Ouvir o Vito se apresentar"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg></i><span>Ouvir o Vito</span></button>
+        <audio id="audio" src="assets/vito.mp3" preload="none"></audio>
+        <small>“Esse é o nosso mascote Vito, a cara usada pelo portal para fazer comunicação.”</small>
+      </div>
+      <div>
+        <p>Remotamente, cobrimos as principais notícias e informações do transporte sobre trilhos na Região Metropolitana de São Paulo.</p>
+        <p>Credenciados à Agência Brasil 61 e à iNFRA, cobrimos também tópicos e curiosidades sobre o transporte metropolitano ao redor do mundo.</p>
+        <ul class="selos"><li>Agência Brasil 61</li><li>iNFRA</li></ul>
+        <div class="dias">
+          <div><b>Terça</b><span>Notícias atuais e pontuais</span></div>
+          <div><b>Quinta</b><span>Curiosidades e outros tipos de vídeo</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="videos">
+    <h2>Vídeos em destaque</h2>
+    <p class="dica">Deslize para ver mais. Toque no play para assistir aqui mesmo.</p>
+    <div class="vids" id="vids"></div>
+  </section>
+
+  <section class="sec" id="redes">
+    <h2>Siga a Via Metrofer</h2>
+    <div class="redes" id="redes"></div>
+  </section>
+
+  <section class="sec" id="contato">
+    <h2>Contato</h2>
+    <div class="mails" id="mails"></div>
+  </section>
+
+</main>
+
+<footer>
+  <img src="assets/logo.png" alt="Via Metrofer"><br>
+  Via Metrofer, Jornalismo Sobre Trilhos
+</footer>
+
+<script>
+/* ============================================================
+   CONFIGURAÇÃO: é só aqui que você mexe para atualizar o site
+   ============================================================ */
+const CONFIG = {
+  // Número exibido na faixa amarela. Troque o texto entre aspas.
+  seguidores: "+2 mil",
+
+  // Links das redes (confira se cada endereço está correto)
+  redes: [
+    { nome: "YouTube",   texto: "Assistir no YouTube", url: "https://www.youtube.com/@viametrofer" },
+    { nome: "Instagram", texto: "Ver no Instagram",    url: "https://www.instagram.com/viametrofer" },
+    { nome: "TikTok",    texto: "Ver no TikTok",       url: "https://www.tiktok.com/@viametrofer" },
+    { nome: "Kwai",      texto: "Ver no Kwai",         url: "https://www.kwai.com/@viametrofer" }
+  ],
+
+  // Vídeos em destaque: "id" é o código depois de /shorts/ no link do YouTube.
+  // Para trocar, copie o código do novo vídeo. Para adicionar, copie uma linha.
+  videos: [
+    { id: "gROWfcnjhLY", titulo: "Fim da STM SP e Artesp" },
+    { id: "s7h-mswSizk", titulo: "Metrofor de Fortaleza" },
+    { id: "vfWLreII8ak", titulo: "Metrô DF" },
+    { id: "KMaTM5oQbYI", titulo: "VLT Carioca" },
+    { id: "je24fpsAMDM", titulo: "Linha 17 Ouro em Congonhas" }
+  ],
+
+  // E-mails de contato
+  emails: [
+    { titulo: "Parcerias e anúncios", endereco: "viametrofer@gmail.com" },
+    { titulo: "Contato geral, dúvidas e sugestões", endereco: "viametrofer@zohomail.com" }
+  ]
+};
+/* ============================ fim da configuração ============================ */
+
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+$("seguidores").textContent = CONFIG.seguidores;
+
+$("btns-hero").innerHTML = CONFIG.redes.map((r, i) =>
+  `<a class="btn${i === 0 ? " main" : ""}" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.texto)}</a>`).join("");
+
+$("redes").innerHTML = CONFIG.redes.map((r) =>
+  `<a class="rede" href="${esc(r.url)}" target="_blank" rel="noopener"><b>${esc(r.nome)}</b><span>@viametrofer</span></a>`).join("");
+
+$("mails").innerHTML = CONFIG.emails.map((m) =>
+  `<a class="mail" href="mailto:${esc(m.endereco)}"><b>${esc(m.titulo)}</b><span>${esc(m.endereco)}</span></a>`).join("");
+
+/* vídeos: o player do YouTube só carrega quando a pessoa toca no play */
+$("vids").innerHTML = CONFIG.videos.map((v) =>
+  `<article class="vid"><div class="tela"><button type="button" data-id="${esc(v.id)}" aria-label="Assistir: ${esc(v.titulo)}">` +
+  `<img loading="lazy" alt="" src="https://i.ytimg.com/vi/${esc(v.id)}/hq720.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${esc(v.id)}/hqdefault.jpg'"></button></div>` +
+  `<h3>${esc(v.titulo)}</h3></article>`).join("");
+
+$("vids").addEventListener("click", (e) => {
+  const b = e.target.closest("button[data-id]");
+  if (!b) return;
+  b.parentElement.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.id}?autoplay=1&rel=0&playsinline=1" title="Vídeo da Via Metrofer" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+});
+
+/* áudio do Vito */
+const au = $("audio"), vito = $("vito"), pl = $("play"), rotulo = pl.querySelector("span");
+const play = '<path d="M7 4l13 8-13 8z"/>', pausa = '<path d="M6 4h4v16H6zM14 4h4v16h-4z"/>';
+function estado(tocando) {
+  vito.classList.toggle("fala", tocando);
+  rotulo.textContent = tocando ? "Pausar" : "Ouvir o Vito";
+  pl.querySelector("svg").innerHTML = tocando ? pausa : play;
+}
+pl.addEventListener("click", () => { au.paused ? au.play() : au.pause(); });
+au.addEventListener("play", () => estado(true));
+au.addEventListener("pause", () => estado(false));
+au.addEventListener("ended", () => estado(false));
+
+/* modo claro e escuro */
+const raiz = document.documentElement, bt = $("tema");
+function tema(t) { raiz.dataset.theme = t; bt.textContent = t === "light" ? "Modo escuro" : "Modo claro"; }
+let salvo = null;
+try { salvo = localStorage.getItem("tema"); } catch (e) {}
+tema(salvo || "dark");
+bt.addEventListener("click", () => {
+  const novo = raiz.dataset.theme === "light" ? "dark" : "light";
+  tema(novo);
+  try { localStorage.setItem("tema", novo); } catch (e) {}
+});
+</script>
+</body>
+</html>
